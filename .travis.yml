@@ -10,7 +10,7 @@ before_install:
 scripts:
   - docker run -e CI=true chiri92/react-test npm test
 
-#build docker image in order to push them to docker hub
+#build docker image using production Dockerfile in order to push them to docker hub
 after_success:
   - docker build -t chiri92/multi-client ./client
   - docker build -t chiri92/multi-nginx  ./nginx
@@ -23,7 +23,7 @@ after_success:
 #take images & push to docker hub
   - docker push chiri92/multi-client
   - docker push chiri92/multi-nginx
-  - docker push chiri92/multi-serve
+  - docker push chiri92/multi-server
   - docker push chiri92/multi-worker
 
 
