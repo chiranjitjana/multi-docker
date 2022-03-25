@@ -21,8 +21,9 @@ after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
 #take images & push to docker hub
-  -docker push chiri92/multi-client
-  -docker push chiri92/multi-nginx
-  -docker push chiri92/multi-serve
-  -docker push chiri92/multi-worker  
+  - docker push chiri92/multi-client
+  - docker push chiri92/multi-nginx
+  - docker push chiri92/multi-serve
+  - docker push chiri92/multi-worker
+
 
